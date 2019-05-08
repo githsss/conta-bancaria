@@ -1,17 +1,26 @@
 
 public class ContaBancaria 
 {
-    String nomedoCliente;
-    int numero;
-    double saldo;
+    private String nome;
+    private int numero;
+    private double saldo;
 
-    void sacar()
+    void SetNome (String nome){
+    }
+    
+    void SetNumero (int numero){
+    }
+    
+    void SetSaldo (double saldo){
+    }
+    
+    void sacar(double valorasersacado)
     {
         System.out.println("");
     }
-    void depositar()
+    void depositar(double valoraserdepositado)
     {
-        System.out.println("");
+        System.out.println("Valor depositado");
     }
 
 }
