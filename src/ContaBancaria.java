@@ -1,26 +1,30 @@
 
-public class ContaBancaria 
-{
-    private String nome;
-    private int numero;
-    private double saldo;
+public class ContaBancaria {
 
-    void SetNome (String nome){
+    String nome;
+    int numero;
+    double saldo = 100;
+
+    public void sacar(double valorasersacado) {
+        
+        if (saldo >= valorasersacado) {
+            saldo=saldo-valorasersacado;
+            
+            System.out.println("Seu novo saldo é igual a: " + saldo);
+        } 
+        else {
+            System.out.println("Operação não pode ser realizada, favor inserir outro valor");
+        }
     }
-    
-    void SetNumero (int numero){
-    }
-    
-    void SetSaldo (double saldo){
-    }
-    
-    void sacar(double valorasersacado)
-    {
-        System.out.println("");
-    }
-    void depositar(double valoraserdepositado)
-    {
-        System.out.println("Valor depositado");
+
+    public void depositar(double valoraserdepositado) {
+        if (saldo >= 0) {
+            saldo=saldo+valoraserdepositado;
+            System.out.println("Seu novo saldo é: " + saldo);
+        }
+        else {
+            System.out.println("Operação não pode ser realizada, favor inserir outro valor");
+        }
     }
 
 }
