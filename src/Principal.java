@@ -29,9 +29,13 @@ public class Principal {
                     System.exit(0);
                     break;
                 case 3:
-                    ContaBancaria conta = new ContaBancaria();
+                    System.out.println("Digite o número da conta");
+                    int numero = scan.nextInt();
+
                     System.out.println("Digite o valor a ser depositado da conta: ");
-                    conta.depositar(scan.nextDouble());
+                    double valor = scan.nextDouble();
+
+                    depositar(numero, valor);
                     break;
                 default:
                     System.out.println("Opçaõ invalida !!");
@@ -43,7 +47,7 @@ public class Principal {
 //        conta1.sacar(scan.nextDouble());
     }
 
-    public static void criarConta() {
+    private static void criarConta() {
         ContaBancaria conta = new ContaBancaria();
 
         System.out.println("Digite seu nome: ");
@@ -51,8 +55,18 @@ public class Principal {
 
         System.out.println("Digite a senha da conta: ");
         conta.setNumero(scan.nextInt());
-        
+
         contas.add(conta);
+    }
+
+    private static void depositar(int numero, double valor) {
+
+        for (ContaBancaria conta : contas) {
+            if (conta.getNumero() == numero) {
+                conta.depositar(valor);
+                System.out.println("O deposito realizadp na conta" + numero + "foi realizado com sucesso");
+            }
+        }
     }
 
 }
